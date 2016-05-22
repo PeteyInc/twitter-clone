@@ -15,10 +15,17 @@ $(document).ready(function() {
     $('#tweet-controls').toggle();
   });
 
+// Hover to reveal tweet-actions
   $('.content').hover(function() {
+    $(this).find('.tweet-actions').show();},
+    function() { $(this).find('.tweet-actions').hide();
+  });
 
-    $('.tweet-actions').toggle();
-  })
+// Click to reveal stats
+  $('.tweet').click(function() {
+    $(this).find('.stats').toggle();
+    $(this).find('.reply').toggle();
+  });
 
 
 });
