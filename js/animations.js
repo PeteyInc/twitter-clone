@@ -27,5 +27,20 @@ $(document).ready(function() {
     $(this).find('.reply').toggle();
   });
 
+// Character count
+  $('.tweet-compose').keyup(function() {
+    var count = 140-$('.tweet-compose').val().length;
+    $('#char-count').html(count);
+    if (count < 10) {
+      $('#char-count').css('color', 'red');
+    } else {
+      $('#char-count').css('color', 'inherit');
+    } if (count == 140 || count < 0) {
+      $('#tweet-controls button').prop('disabled', true);
+    } else {
+      $('#tweet-controls button').prop('disabled', false);
+    }
+  });
+
 
 });
